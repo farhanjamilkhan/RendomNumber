@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Rendom Number</h1>
+    <button onclick="good()">Click</button>
+    <h2 id="print"></h2>
+   <script>
+    let min = document.getElementById("print")
+
+    function good() {
+        let numbers = [
+            Math.floor(Math.random()* 9),
+            Math.floor(Math.random()* 10),
+            Math.floor(Math.random()* 1000),
+            Math.floor(Math.random()* 1000),
+            Math.floor(Math.random()* 10),
+            Math.floor(Math.floor(Math.random()* 100))
+        ];
+        let onessum = 0;
+        let onescounter = 0;
+       
+        let tenssum = 0;
+        let tensconter= 0;
+
+        let hundredssum = 0;
+        let hundredscounter = 0;
+        
+        for (let i = 0; i <numbers.length; i++) {
+            if (numbers [i] > 0 && numbers [10] < 10) {
+                onesum += numbers [i]; onescounter++; 
+            }
+            else if (numbers [i] > 9 && numbers [i] <100) {
+                tenssum += numbers [i]; tensconter++;
+            }
+            else if (numbers [i] > 100 && numbers [i] <1000) {
+                hundredssum += numbers [i]; hundredscounter++;
+            }
+        }
+        min.innerHTML = `numbers: ${numbers}; one's ${onescounter}- (sum) - ${onescounter} <br> Ten's ${tensconter} - (sum) ${tenssum} <br> hundred's ${hundredscounter} - (sum) ${hundredssum} <br> Sum of all ${onessum+tenssum+hundredssum}`; 
+    }
+   </script>
+</body>
+</html>
